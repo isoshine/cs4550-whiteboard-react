@@ -1,9 +1,37 @@
 import React from "react";
+import CourseRowComponent from "./CourseRowComponent";
 
 export default class CourseTableComponent extends React.Component {
     render() {
         return (
-            <h3>Course Table</h3>
+
+            <div>
+                <h3>Course Table {this.props.courses.length}</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Owner</th>
+                        <th>Last Modified</th>
+                        <th>
+                            <button>Sort</button>
+                            <button>Grid</button>
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {
+                        //we want to iterate over the array
+                        this.props.courses.map(course =>
+                            <CourseRowComponent
+                                deleteCourse={this.props.deleteCourse}
+                                key={course._id}
+                                course={course}/> )
+                    }
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }

@@ -16,6 +16,6 @@ class Whiteboard extends React.Component {
     }
 }
 
-//we are importing from somewhere else,
+//we are importing from CourseListComponent,
 //by default we export to Whiteboard
 export default Whiteboard;
