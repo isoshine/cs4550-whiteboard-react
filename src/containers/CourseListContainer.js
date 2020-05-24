@@ -1,11 +1,12 @@
 import React from "react";
-import CourseTableComponent from "./CourseTableComponent";
-import CourseGridComponent from "./CourseGridComponent";
+import CourseTableComponent from "../components/CourseTableComponent";
+import CourseGridComponent from "../components/CourseGridComponent";
 
-class CourseListComponent extends React.Component {
+//the course list is playing the role of a container
 
+class CourseListContainer extends React.Component {
     state = {
-        layout: "table",
+        layout: this.props.match.params.layout,
         //there is an expectation that this static data will eventually be dynamic
         courses: [
             {_id: "1", title: "cs4550", owner: "me", modified: "1/1/2020"},
@@ -20,9 +21,13 @@ class CourseListComponent extends React.Component {
     //function setLayout() {}
     setLayout = (layout) => {
         //dont do: this.state.layout = layout;
-        this.setState({
-            layout:layout
-        })
+
+        //this.setState({
+        //    layout:layout
+        //})
+        //instead of changing the state, we want to change the URL
+
+        this.props.history.push(`/${layout}/courses`)
     };
 
     addCourse = (title) => {
@@ -59,19 +64,29 @@ class CourseListComponent extends React.Component {
             <div>
                 <h2>Course List</h2>
 
-                <input
-                    onChange={(event) => this.setState({
-                        newCourseTitle: event.target.value
-                    })}
-                    value={this.state.newCourseTitle}
-                    placeholder="Course Title"/>
-                <button onClick={() => this.addCourse(" " + this.state.newCourseTitle)}>
-                    Add Course
-                </button>
+                <div className="input-group mb-3">
+                    <input
+                        className="form-control"
+                        type="text"
+                        onChange={(event) => this.setState({
+                            newCourseTitle: event.target.value
+                        })}
+                        value={this.state.newCourseTitle}
+                        placeholder="Course Title"/>
+                    <div className="input-group-append">
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => this.addCourse(" " + this.state.newCourseTitle)}>
+                            Add Course
+                        </button>
+                    </div>
+                </div>
 
                 {this.state.layout === "table" &&
                 <div>
-                    <button onClick={() => this.setLayout("grid")}>
+                    <button
+                        className="btn btn-light"
+                        onClick={() => this.setLayout("grid")}>
                         Grid
                     </button>
                     <CourseTableComponent
@@ -81,7 +96,9 @@ class CourseListComponent extends React.Component {
                 }
                 {this.state.layout === "grid" &&
                 <div>
-                    <button onClick={() => this.setLayout("table")}>
+                    <button
+                        className="btn btn-light"
+                        onClick={() => this.setLayout("table")}>
                         Table
                     </button>
                     <CourseGridComponent courses={this.state.courses}/>
@@ -92,4 +109,4 @@ class CourseListComponent extends React.Component {
     }
 }
 
-export default CourseListComponent;
+export default CourseListContainer;

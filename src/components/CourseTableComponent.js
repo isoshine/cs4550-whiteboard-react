@@ -7,15 +7,15 @@ export default class CourseTableComponent extends React.Component {
 
             <div>
                 <h3>Course Table {this.props.courses.length}</h3>
-                <table>
+                <table className="table">
                     <thead>
                     <tr>
                         <th>Title</th>
                         <th>Owner</th>
                         <th>Last Modified</th>
                         <th>
-                            <button>Sort</button>
-                            <button>Grid</button>
+                            <button className="btn btn-light">Sort</button>
+                            <button className="btn btn-light">Grid</button>
                         </th>
                     </tr>
                     </thead>
