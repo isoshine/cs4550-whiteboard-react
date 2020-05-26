@@ -1,20 +1,32 @@
 import React from "react";
 import CourseTableComponent from "../components/CourseTableComponent";
 import CourseGridComponent from "../components/CourseGridComponent";
+import courseService from "../services/CourseService";
 
 //the course list is playing the role of a container
 
 class CourseListContainer extends React.Component {
     state = {
         layout: this.props.match.params.layout,
-        //there is an expectation that this static data will eventually be dynamic
-        courses: [
-            {_id: "1", title: "cs4550", owner: "me", modified: "1/1/2020"},
-            {_id: "2", title: "cs4500", owner: "john", modified: "1/1/2020"},
-            {_id: "3", title: "cs3000", owner: "abby", modified: "1/1/2020"},
-            {_id: "4", title: "cs3500", owner: "jose", modified: "1/1/2020"},
-        ],
-        newCourseTitle: "New Title"
+        //empty array, placeholder to replace with fetched data from server
+        courses: [],
+        newCourseTitle: ""
+    };
+
+    componentDidMount() {
+        //playing the role of the controller
+        courseService.findAllCourses()
+            //then we set the state
+            .then(actualArrayOfCourses => this.setState({courses: actualArrayOfCourses}))
+    };
+
+    //function that gets notified when any of the properties changes because of some outside information change
+    componentDidUpdate(prevProp, prevState, snapshot) {
+        if(prevProp.match.params.layout !== this.props.match.params.layout) {
+            this.setState({
+                layout:this.props.match.params.layout
+            })
+        }
     };
 
     //new syntax for ES6; this code is === to
@@ -32,30 +44,33 @@ class CourseListContainer extends React.Component {
 
     addCourse = (title) => {
         const newCourse = {
-            _id: (new Date()).getMilliseconds() + "",
+            //we dont need this anymore bc the service will create this for us
+            //_id: (new Date()).getMilliseconds() + "",
             title: title,
             owner: "me",
             modified: (new Date()).toDateString()
         };
 
-        this.setState((prevState) => {
-            return {
-                //new syntax: adding a new course onto an array of previous courses
-                courses: [
-                    ...prevState.courses,
-                    newCourse]
-            }
-        })
+        courseService.createCourse(newCourse).then(theActualNewCourse =>
+            this.setState((prevState) => {
+                return {
+                    //new syntax: adding a new course onto an array of previous courses
+                    courses: [
+                        ...prevState.courses,
+                        theActualNewCourse]
+                }
+            }))
     };
 
     deleteCourse = (courseToDelete) => {
-        this.setState((prevState) => {
-            return ({
-                courses: prevState.courses.filter(course => {
-                    return course !== courseToDelete
+        courseService.deleteCourse(courseToDelete._id)
+            .then(status => this.setState((prevState) => {
+                return ({
+                    courses: prevState.courses.filter(course => {
+                        return course !== courseToDelete
+                    })
                 })
-            })
-        })
+            }))
     };
 
 

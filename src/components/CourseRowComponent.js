@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import courseService from "../services/CourseService";
 
 export default class CourseRowComponent extends React.Component {
     //the local state field will show whether an element is currently being "edited" or not
@@ -14,16 +15,28 @@ export default class CourseRowComponent extends React.Component {
     setEdit = (edit) =>
         this.setState({edit: edit});
 
+
+    save = () => {
+        courseService.updateCourse(
+            this.state.course._id,
+            //our course should already have the new title
+            this.state.course)
+            //after status comes back as positive, we can set the setEdit to false
+            .then(status => this.setEdit(false))
+    };
+
     updateCourseTitle = (newTitle) =>
         this.setState(prevState => ({
-            course:
-                {...prevState.course, title: newTitle}
+            course: {
+                ...prevState.course,
+                title: newTitle
+            }
         }));
 
     render() {
         return (
             //reminder: props are read only !!!
-        <tr key={this.props.course._id}>
+        <tr className={this.state.edit ? "table-secondary": ""} key={this.props.course._id}>
             <td>
                 {/*Making the title and input field mutually exclusive to each other
                 if the state is not in edit-mode, show title
@@ -55,7 +68,7 @@ export default class CourseRowComponent extends React.Component {
                 <span>
                     <button
                         className="btn btn-primary"
-                        onClick={() => this.setEdit(false)}>Save</button>
+                        onClick={this.save}>Save</button>
                     <button
                         className="btn btn-danger"
                         onClick={() => this.props.deleteCourse(this.props.course)}>
