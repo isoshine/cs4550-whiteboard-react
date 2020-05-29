@@ -22,6 +22,16 @@ const HomeComponent = () =>
                 Sign-in
             </Link>
 
+            <Link className="list-group-item"
+                  to="/sign-up">
+                Sign-up
+            </Link>
+
+            <Link className="list-group-item"
+                  to="/profile">
+                Profile
+            </Link>
+
         </div>
 
 

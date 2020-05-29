@@ -6,7 +6,8 @@ export default class CourseTableComponent extends React.Component {
         return (
 
             <div>
-                <h3>Course Table {this.props.courses.length}</h3>
+                <h3></h3>
+
                 <table className="table">
                     <thead>
                     <tr>
@@ -15,7 +16,6 @@ export default class CourseTableComponent extends React.Component {
                         <th>Last Modified</th>
                         <th>
                             <button className="btn btn-light">Sort</button>
-                            <button className="btn btn-light">Grid</button>
                         </th>
                     </tr>
                     </thead>

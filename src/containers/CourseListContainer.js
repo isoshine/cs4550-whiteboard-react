@@ -77,7 +77,7 @@ class CourseListContainer extends React.Component {
     render() {
         return (
             <div>
-                <h2>Course List</h2>
+                <h2>My Courses</h2>
 
                 <div className="input-group mb-3">
                     <input
@@ -116,7 +116,9 @@ class CourseListContainer extends React.Component {
                         onClick={() => this.setLayout("table")}>
                         Table
                     </button>
-                    <CourseGridComponent courses={this.state.courses}/>
+                    <CourseGridComponent
+                        deleteCourse={this.deleteCourse}
+                        courses={this.state.courses}/>
                 </div>
                 }
             </div>

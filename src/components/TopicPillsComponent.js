@@ -1,20 +1,20 @@
 import React from "react";
 
-const LessonTabsComponent = () => {
-    return(
+const TopicPillsComponent = () => {
+    return (
         <div>
-            <ul className="nav nav-tabs">
+            <ul className="nav nav-pills">
                 <li className="nav-item">
-                    <a className="nav-link active" href="#">Lesson 1</a>
+                    <a className="nav-link active" href="#">Topic 1</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 2</a>
+                    <a className="nav-link" href="#">Topic 2</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 3</a>
+                    <a className="nav-link" href="#">Topic 3</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 4</a>
+                    <a className="nav-link" href="#">Topic 4</a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Add</a>
@@ -24,4 +24,4 @@ const LessonTabsComponent = () => {
     )
 };
 
-export default LessonTabsComponent;
+export default TopicPillsComponent;

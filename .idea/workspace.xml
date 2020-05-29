@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5a62ce76-c3a3-4e6e-8167-dfdaa39dc454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseRowComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseGridComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseTableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModuleListComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignInComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignInComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Whiteboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseListContainer.js" afterDir="false" />
     </list>
@@ -31,17 +37,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/containers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -70,6 +82,14 @@
       <workItem from="1590028827970" duration="8307000" />
       <workItem from="1590285200663" duration="12899000" />
       <workItem from="1590450777853" duration="8783000" />
+      <workItem from="1590468906010" duration="4421000" />
+      <workItem from="1590510103536" duration="1729000" />
+      <workItem from="1590550228927" duration="4497000" />
+      <workItem from="1590630690869" duration="6179000" />
+      <workItem from="1590639015011" duration="364000" />
+      <workItem from="1590678624489" duration="1351000" />
+      <workItem from="1590693008966" duration="7714000" />
+      <workItem from="1590720920203" duration="114000" />
     </task>
     <servers />
   </component>

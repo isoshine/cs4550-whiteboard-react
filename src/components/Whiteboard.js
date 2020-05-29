@@ -1,9 +1,11 @@
 import React from "react";
 import CourseListContainer from "../containers/CourseListContainer";
-import CourseEditor from "./CourseEditor";
+import CourseEditor from "../containers/CourseEditorContainer";
 import {BrowserRouter, Route} from "react-router-dom";
 import HomeComponent from "./HomeComponent";
 import SignInComponent from "./SignInComponent";
+import SignUpComponent from "./SignUpComponent";
+import ProfileComponent from "./ProfileComponent";
 
 //"extends React.Component"- inheriting React's ES6
 class Whiteboard extends React.Component {
@@ -20,8 +22,9 @@ class Whiteboard extends React.Component {
                            component={HomeComponent}/>
 
                     <Route path="/sign-in" exact={true} component={SignInComponent}/>
+                    <Route path="/sign-up" exact={true} component={SignUpComponent}/>
+                    <Route path="/profile" exact={true} component={ProfileComponent}/>
 
-                    {/*TODO: port over sign-up, profile, etc.*/}
 
                     <Route path="/courses"
                            exact={true}
@@ -34,7 +37,7 @@ class Whiteboard extends React.Component {
 
 
                     <Route path="/editor"
-                           exact={true}
+                           //exact={true}
                            component={CourseEditor}/>
 
                 </div>
