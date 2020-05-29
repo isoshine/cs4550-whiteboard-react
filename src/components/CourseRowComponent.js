@@ -50,7 +50,7 @@ export default class CourseRowComponent extends React.Component {
 
 
                 {this.state.edit && <input
-                    className="form-control"
+                    className="wbdv-form wbdv-input form-control"
                     onChange={(event) => this.updateCourseTitle(event.target.value)}
                     value={this.state.course.title}/>}
             </td>
@@ -60,17 +60,17 @@ export default class CourseRowComponent extends React.Component {
             <td>
                 {!this.state.edit &&
                 <button
-                    className="btn btn-secondary"
+                    className="wbdv-btn wbdv-edit btn btn-secondary"
                     onClick={() => this.setEdit(true)}>Edit</button>
                 }
 
                 {this.state.edit &&
                 <span>
                     <button
-                        className="btn btn-primary"
+                        className="wbdv-btn wbdv-save btn btn-primary"
                         onClick={this.save}>Save</button>
                     <button
-                        className="btn btn-danger"
+                        className="wbdv-btn wbdv-delete btn btn-danger"
                         onClick={() => this.props.deleteCourse(this.props.course)}>
                         Delete
                 </button>

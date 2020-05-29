@@ -14,32 +14,30 @@ const CourseEditorContainer = () => {
                 Back
             </Link>
 
-            <h2>CS1234</h2>
+            <h2 className="wbdv-course-title">CS1234</h2>
             <div>
                 <div className="row">
 
-                    <div className="col-4 col-lg-3 col-md-4">
+                    <div className=" wbdv-module-list col-4 col-lg-3 col-md-4">
                         <ModuleListComponent/>
                     </div>
 
                     <div className="col-8 col-lg-9 col-md-8">
                         <br/>
 
-                        <div className="container horizontal-scrollable">
+                        <div className="wbdv-lesson-tabs container horizontal-scrollable">
                             <div className="row text-center">
                                 <LessonTabsComponent/>
                             </div>
                         </div>
 
                         <br/>
-                        <div className="container horizontal-scrollable">
+                        <div className="wbdv-topic-pills container horizontal-scrollable">
                             <div className="row text-center">
                                 <TopicPillsComponent/>
                             </div>
                         </div>
                         <br/>
-
-                        <h4>Widgets</h4>
 
                     </div>
                 </div>

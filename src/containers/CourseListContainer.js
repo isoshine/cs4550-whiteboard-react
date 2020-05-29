@@ -73,13 +73,12 @@ class CourseListContainer extends React.Component {
             }))
     };
 
-
     render() {
         return (
             <div>
                 <h2>My Courses</h2>
 
-                <div className="input-group mb-3">
+                <div className="wbdv-input wbdv-form input-group mb-3">
                     <input
                         className="form-control"
                         type="text"
@@ -90,7 +89,7 @@ class CourseListContainer extends React.Component {
                         placeholder="Course Title"/>
                     <div className="input-group-append">
                         <button
-                            className="btn btn-primary"
+                            className="wbdv-btn wbdv-add btn btn-primary"
                             onClick={() => this.addCourse(" " + this.state.newCourseTitle)}>
                             Add Course
                         </button>
@@ -100,7 +99,7 @@ class CourseListContainer extends React.Component {
                 {this.state.layout === "table" &&
                 <div>
                     <button
-                        className="btn btn-light"
+                        className="wbdv-btn wbdv-grid btn btn-light"
                         onClick={() => this.setLayout("grid")}>
                         Grid
                     </button>
@@ -112,7 +111,7 @@ class CourseListContainer extends React.Component {
                 {this.state.layout === "grid" &&
                 <div>
                     <button
-                        className="btn btn-light"
+                        className="wbdv-btn wbdv-table btn btn-light"
                         onClick={() => this.setLayout("table")}>
                         Table
                     </button>

@@ -34,7 +34,10 @@ const updateCourse = (courseId, course) => {
 };
 
 
-const findCourseById = (courseId) => {};
+const findCourseById = (courseId) => {
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/shinekim/courses/" + courseId)
+        .then(response => response.json())
+};
 
 const findAllCourses = () => {
     //first we fetch the data from remote server

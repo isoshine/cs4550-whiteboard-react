@@ -30,11 +30,15 @@ export default class CourseCardComponent extends React.Component {
     render() {
         return (
 
-            <div className={this.state.edit ? "card border-secondary col mb-4" : "col mb-4"}
+            <div className="col mb-4"
                  key={this.props.course._id}>
 
-                <div className="card bg-light">
-                    <h3 className="card-title text-center">
+                <div className={this.state.edit ?
+                    "wbdv-card card text-center border-primary bg-light" :
+                    "wbdv-card card text-center bg-light"}>
+
+                    <h5> &nbsp; </h5>
+                    <h3 className="wbdv-card-title card-title text-center">
 
                         <div>
                             {!this.state.edit &&
@@ -44,33 +48,33 @@ export default class CourseCardComponent extends React.Component {
                         </div>
                         <div>
                             {this.state.edit &&
-                            <input className="form-control"
+                            <input className="wbdv-card-input form-control"
                                    onChange={(event) => this.updateCourseTitle(event.target.value)}
                                    value={this.state.course.title}/>
                             }
                         </div>
                     </h3>
 
-                    <div className="card-body">
-                        <p className="card-text">Owner: {this.state.course.owner}</p>
-                        <p className="card-text">
+                    <div className="wbdv-card-body card-body">
+                        <p className="wbdv-card-text card-text">Owner: {this.state.course.owner}</p>
+                        <p className="wbdv-card-text card-text">
                             <small className="text-muted">
                                 Last Modified: {this.state.course.modified}
                             </small>
                         </p>
                         <div>
                             {!this.state.edit &&
-                            <button className="btn btn-secondary"
+                            <button className="wbdv-edit wbdv-btn btn btn-secondary"
                                     onClick={() => this.setEdit(true)}>
                                 Edit
                             </button>}
                             {this.state.edit &&
                             <span>
-                                <button className="btn btn-primary"
+                                <button className="wbdv-btn wbdv-save btn btn-primary"
                                         onClick={this.save}>
                                 Save
                                 </button>
-                                <button className="btn btn-danger"
+                                <button className="wbdv-btn wbdv-delete btn btn-danger"
                                         onClick={() => this.props.deleteCourse(this.props.course)}>
                                 Delete
                                 </button>

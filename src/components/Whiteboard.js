@@ -16,7 +16,7 @@ class Whiteboard extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <h1>Whiteboard</h1>
+                    <h1 className="wbdv-whiteboard whiteboard">Whiteboard</h1>
                     <Route path="/"
                            exact={true}
                            component={HomeComponent}/>
