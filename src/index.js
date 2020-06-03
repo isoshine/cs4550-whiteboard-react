@@ -3,10 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {createStore} from "redux";
+import {Provider, connect} from "react-redux";
+import hello from "./reducers/hello"
+import HelloContainer from "./containers/HelloContainer";
+
+//bc all of our components will no longer require state (stateless components),
+//ideally we will have only functions as opposed to classes
+
+//1. reducer generates the state
+//2. the state is stored in the store
+//3. the store is being Provided to the container
+//4. the container is extracting the state variable and putting (mapping) it
+//   in the property that the HelloWorld is expecting
+//5. the HelloWorld is rendered by the container
+
+
+const store = createStore(hello);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/*<App />*/}
+
+    {/*Provide the store to the application */}
+    <Provider store={store}>
+        <HelloContainer/>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

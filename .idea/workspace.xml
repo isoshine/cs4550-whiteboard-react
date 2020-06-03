@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5a62ce76-c3a3-4e6e-8167-dfdaa39dc454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseGridComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseRowComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseTableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTableComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModuleListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Whiteboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseListContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/CourseService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CourseService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,12 +45,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/containers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/containers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -96,7 +86,10 @@
       <workItem from="1590639015011" duration="364000" />
       <workItem from="1590678624489" duration="1351000" />
       <workItem from="1590693008966" duration="7714000" />
-      <workItem from="1590720920203" duration="5666000" />
+      <workItem from="1590720920203" duration="6671000" />
+      <workItem from="1590730778400" duration="165000" />
+      <workItem from="1590959042979" duration="969000" />
+      <workItem from="1591154906974" duration="6548000" />
     </task>
     <servers />
   </component>
