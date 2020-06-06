@@ -7,6 +7,8 @@ import {createStore} from "redux";
 import {Provider, connect} from "react-redux";
 import hello from "./reducers/hello"
 import HelloContainer from "./containers/HelloContainer";
+import CounterComponent from "./components/CounterComponent";
+import counterReducer from "./reducers/counterReducer";
 
 //bc all of our components will no longer require state (stateless components),
 //ideally we will have only functions as opposed to classes
@@ -19,7 +21,7 @@ import HelloContainer from "./containers/HelloContainer";
 //5. the HelloWorld is rendered by the container
 
 
-const store = createStore(hello);
+const store = createStore(counterReducer);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -27,7 +29,7 @@ ReactDOM.render(
 
     {/*Provide the store to the application */}
     <Provider store={store}>
-        <HelloContainer/>
+        <CounterComponent/>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

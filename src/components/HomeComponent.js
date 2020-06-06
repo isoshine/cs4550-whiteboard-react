@@ -34,7 +34,6 @@ const HomeComponent = () =>
 
         </div>
 
-
     </div>;
 
 export default HomeComponent;
