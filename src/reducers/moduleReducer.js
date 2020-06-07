@@ -3,7 +3,7 @@
 //(S2) --e2 --> (S3)
 
 const initialState = {
-    newModuleTitle: "New Module",
+    newModuleTitle: "",
     modules: [
         {_id: "123", title: "Module A"},
         {_id: "234", title: "Module B"},
@@ -18,11 +18,6 @@ const initialState = {
 //a reducer is a finite state machine that takes 2 arguments: current state, action
 const moduleReducer = (state=initialState, event) => {
     switch (event.type) {
-        case "MODULE_TITLE":
-            return {
-                ...state, newModuleTitle: event.newModuleTitle
-            };
-            break;
         case "ADD_MODULE":
             return {
                 modules: [
