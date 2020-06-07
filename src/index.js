@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createStore} from "redux";
-import {Provider, connect} from "react-redux";
-import hello from "./reducers/hello"
-import HelloContainer from "./containers/HelloContainer";
-import CounterComponent from "./components/CounterComponent";
-import counterReducer from "./reducers/counterReducer";
+import {Provider} from "react-redux";
+import moduleReducer from "./reducers/moduleReducer";
+import ModuleListComponent from "./components/ModuleListComponent";
+import ModuleListContainer from "./containers/ModuleListContainer";
 
 //bc all of our components will no longer require state (stateless components),
 //ideally we will have only functions as opposed to classes
@@ -21,18 +19,20 @@ import counterReducer from "./reducers/counterReducer";
 //5. the HelloWorld is rendered by the container
 
 
-const store = createStore(counterReducer);
+const store = createStore(moduleReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/*<App />*/}
+    <React.StrictMode>
+        {/*<App />*/}
+        <div className="container">
+            {/*Provide the store to the application */}
+            <Provider store={store}>
+                <ModuleListContainer/>
+            </Provider>
+        </div>
 
-    {/*Provide the store to the application */}
-    <Provider store={store}>
-        <CounterComponent/>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
