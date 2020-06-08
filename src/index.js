@@ -7,6 +7,7 @@ import {Provider} from "react-redux";
 import moduleReducer from "./reducers/moduleReducer";
 import ModuleListComponent from "./components/ModuleListComponent";
 import ModuleListContainer from "./containers/ModuleListContainer";
+import App from "./App";
 
 //bc all of our components will no longer require state (stateless components),
 //ideally we will have only functions as opposed to classes
@@ -23,14 +24,13 @@ const store = createStore(moduleReducer);
 
 ReactDOM.render(
     <React.StrictMode>
-        {/*<App />*/}
-        <div className="container">
-            {/*Provide the store to the application */}
-            <Provider store={store}>
-                <ModuleListContainer/>
-            </Provider>
-        </div>
-
+        <Provider store={store}>
+            <App />
+        </Provider>
+        {/*    /!*Provide the store to the application *!/*/}
+        {/*    <Provider store={store}>*/}
+        {/*        <ModuleListContainer/>*/}
+        {/*    </Provider>*/}
     </React.StrictMode>,
     document.getElementById('root')
 );

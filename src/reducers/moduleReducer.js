@@ -4,20 +4,25 @@
 
 const initialState = {
     newModuleTitle: "",
-    modules: [
-        {_id: "123", title: "Module A"},
-        {_id: "234", title: "Module B"},
-        {_id: "345", title: "Module C"},
-        {_id: "456", title: "Module D"},
-        {_id: "555", title: "Module E"},
-        {_id: "678", title: "Module F"},
-
-    ]
+    modules: []
 };
 
 //a reducer is a finite state machine that takes 2 arguments: current state, action
 const moduleReducer = (state=initialState, event) => {
     switch (event.type) {
+        case "UPDATE_MODULE":
+            return {
+                ...state,
+                modules: state.modules.map(
+                    module => module._id === event.updatedModule._id ?
+                            event.updatedModule : module)
+            };
+            break;
+        case "FIND_ALL_MODULES":
+            return {
+                ...state, modules: event.modules
+            };
+            break;
         case "ADD_MODULE":
             return {
                 modules: [
