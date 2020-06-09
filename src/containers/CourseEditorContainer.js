@@ -1,9 +1,8 @@
 import React from "react";
-import LessonTabsComponent from "../components/LessonTabsComponent";
-import ModuleListComponent from "../components/ModuleListComponent";
 import {Link} from "react-router-dom";
 import TopicPillsComponent from "../components/TopicPillsComponent";
 import ModuleListContainer from "./ModuleListContainer";
+import LessonTabsContainer from "./LessonTabsContainer";
 
 //if i need to maintain a state, then i must be a class
 //if i do not need to maintain a state, then i can be a function
@@ -11,7 +10,7 @@ import ModuleListContainer from "./ModuleListContainer";
 const CourseEditorContainer = ({match}) => {
     return (
         <div className="container">
-            {match.params.courseId}
+            {/*{match.params.courseId}*/}
 
             <Link to="/table/courses">
                 Back
@@ -22,7 +21,7 @@ const CourseEditorContainer = ({match}) => {
                 <div className="row">
 
                     <div className=" wbdv-module-list col-4 col-lg-3 col-md-4">
-                        <ModuleListContainer/>
+                        <ModuleListContainer {...match}/>
                     </div>
 
                     <div className="col-8 col-lg-9 col-md-8">
@@ -30,7 +29,7 @@ const CourseEditorContainer = ({match}) => {
 
                         <div className="wbdv-lesson-tabs container horizontal-scrollable">
                             <div className="row text-center">
-                                <LessonTabsComponent/>
+                                <LessonTabsContainer {...match}/>
                             </div>
                         </div>
 

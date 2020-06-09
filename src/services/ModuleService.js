@@ -3,14 +3,20 @@ const findAllModules = () => {
         .then(response => response.json())
 };
 
+//restful services
+const findModulesForCourse = (courseId) => {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/courses/${courseId}/modules`)
+        .then(response => response.json())
+};
+
 const deleteModule = (moduleId) => {
     return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/modules/${moduleId}`,
         {method: "DELETE"})
         .then(response => response.json())
 };
 
-const addModule = (module) => {
-    return fetch("http://wbdv-generic-server.herokuapp.com/api/shinekim/modules", {
+const addModule = (courseId, module) => {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/courses/${courseId}/modules`, {
         method: "POST",
         body: JSON.stringify(module),
         headers: {"content-type": "application/json"}})
@@ -30,5 +36,6 @@ export default {
     findAllModules,
     deleteModule,
     addModule,
-    updateModule
+    updateModule,
+    findModulesForCourse
 }

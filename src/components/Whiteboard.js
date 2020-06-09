@@ -40,9 +40,14 @@ class Whiteboard extends React.Component {
                            exact={true}
                            component={CourseEditor}/>
 
-                    <Route path="/editor/:courseId"
-                           exact={true}
-                           component={CourseEditor}/>
+                    <Route
+                        path={['/editor/:courseId', '/editor/:courseId/modules/:moduleId']}
+                        exact={true}
+                        component={CourseEditor}/>
+
+                    {/*<Route path="/editor/:courseId"*/}
+                    {/*       exact={true}*/}
+                    {/*       component={CourseEditor}/>*/}
 
                 </div>
             </BrowserRouter>

@@ -7,13 +7,14 @@ class ModuleListComponent extends React.Component {
     };
 
     componentDidMount() {
-        this.props.findAllModules();
+        //this.props.findAllModules();
+        this.props.findModulesForCourse(this.props.params.courseId);
     }
 
     render() {
         return (
             <div>
-                <h1>Modules </h1>
+                <h1>Modules</h1>
                 <ul className="list-group">
                     {this.props.modules.map(module =>
                         <div key={module._id}>
@@ -75,7 +76,9 @@ class ModuleListComponent extends React.Component {
                            })}
                            className="form-control"/>
                     <div className="input-group-append">
-                        <button onClick={() => this.props.addModule({
+                        <button onClick={() => this.props.addModule(
+                            this.props.params.courseId,
+                            {
                             title: this.state.newModuleTitle
                         })}
                                 type="button"

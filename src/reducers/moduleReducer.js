@@ -10,6 +10,12 @@ const initialState = {
 //a reducer is a finite state machine that takes 2 arguments: current state, action
 const moduleReducer = (state=initialState, event) => {
     switch (event.type) {
+        case "FIND_MODULES":
+            return {
+                ...state,
+                modules: event.modules
+            };
+            break;
         case "UPDATE_MODULE":
             return {
                 ...state,
@@ -20,7 +26,8 @@ const moduleReducer = (state=initialState, event) => {
             break;
         case "FIND_ALL_MODULES":
             return {
-                ...state, modules: event.modules
+                ...state,
+                modules: event.modules
             };
             break;
         case "ADD_MODULE":

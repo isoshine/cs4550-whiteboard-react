@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import {createStore} from "redux";
+import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 import moduleReducer from "./reducers/moduleReducer";
-import ModuleListComponent from "./components/ModuleListComponent";
-import ModuleListContainer from "./containers/ModuleListContainer";
 import App from "./App";
+import lessonReducer from "./reducers/lessonReducer";
 
 //bc all of our components will no longer require state (stateless components),
 //ideally we will have only functions as opposed to classes
@@ -19,18 +18,18 @@ import App from "./App";
 //   in the property that the HelloWorld is expecting
 //5. the HelloWorld is rendered by the container
 
+//mega reducer that contains a bunch of reducer
+const reducers = combineReducers({
+    moduleReducer, lessonReducer
+});
 
-const store = createStore(moduleReducer);
+const store = createStore(reducers);
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <App />
+            <App/>
         </Provider>
-        {/*    /!*Provide the store to the application *!/*/}
-        {/*    <Provider store={store}>*/}
-        {/*        <ModuleListContainer/>*/}
-        {/*    </Provider>*/}
     </React.StrictMode>,
     document.getElementById('root')
 );
