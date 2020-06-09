@@ -15,7 +15,6 @@ const moduleReducer = (state=initialState, event) => {
                 ...state,
                 modules: event.modules
             };
-            break;
         case "UPDATE_MODULE":
             return {
                 ...state,
@@ -23,13 +22,11 @@ const moduleReducer = (state=initialState, event) => {
                     module => module._id === event.updatedModule._id ?
                             event.updatedModule : module)
             };
-            break;
         case "FIND_ALL_MODULES":
             return {
                 ...state,
                 modules: event.modules
             };
-            break;
         case "ADD_MODULE":
             return {
                 modules: [
@@ -37,12 +34,10 @@ const moduleReducer = (state=initialState, event) => {
                     event.newModule
                 ]
             };
-            break;
         case "DELETE_MODULE":
             return {
                 modules: state.modules.filter(module => module._id !== event.moduleId)
             };
-            break;
         default:
             return state;
     }

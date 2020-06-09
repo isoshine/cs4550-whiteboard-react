@@ -12,4 +12,16 @@ export const addLesson = (moduleId, newLesson) =>
     })
         .then(response => response.json());
 
-export const deleteLesson = (lessonId) => {};
+export const deleteLesson = (lessonId) => {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/modules/lessons/${lessonId}`,{
+        method: "DELETE"})
+        .then(response => response.json())
+};
+
+export const updateLesson = (lessonId, lesson) => {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/modules/lessons/${lessonId}`,{
+        method: "PUT",
+        body: JSON.stringify(lesson),
+        headers: {"content-type": "application/json"}})
+        .then(response => response.json())
+    };

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import LessonTabsComponent from "../components/LessonTabsComponent";
-import {addLesson, findLessons} from "../services/LessonService";
+import {addLesson, findLessons, deleteLesson, updateLesson} from "../services/LessonService";
 
 //same as ModuleListContainer, more modern syntax
 const stateToPropertyMapper = (state) => ({
@@ -9,10 +9,17 @@ const stateToPropertyMapper = (state) => ({
 
 const dispatchToPropertyMapper = (dispatch) => {
     return {
+        updateLesson: (lessonId, newLesson) => {
+            updateLesson(lessonId, newLesson)
+                .then(actualLesson => dispatch({
+                    type: "UPDATE_LESSON",
+                    newLesson
+                }))
+        },
         addLesson: (moduleId, newLesson) => {
             addLesson(moduleId, newLesson)
                 .then(actualLesson => dispatch({
-                    type: 'ADD_LESSON',
+                    type: "ADD_LESSON",
                     newLesson
                 }))
         },
