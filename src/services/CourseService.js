@@ -1,6 +1,6 @@
 const createCourse = (course) => {
     //first fetch, !! by default fetch is a GET request
-    return fetch("https://wbdv-generic-server.herokuapp.com/api/shinekim/courses", {
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/001479351/courses", {
         //change the default GET request to POST request
         method: "POST",
         //embed data that we want to create inside of the body as a JSON file
@@ -15,14 +15,14 @@ const createCourse = (course) => {
 
 
 const deleteCourse = (courseId) => {
-    return fetch("https://wbdv-generic-server.herokuapp.com/api/shinekim/courses/" + courseId, {
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/001479351/courses/" + courseId, {
         method: "DELETE",
     })
         .then(response => response.json())
 };
 
 const updateCourse = (courseId, course) => {
-    return fetch("https://wbdv-generic-server.herokuapp.com/api/shinekim/courses/" + courseId, {
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/001479351/courses/" + courseId, {
         //change the default GET request to PUT request
         method: "PUT",
         body: JSON.stringify(course),
@@ -35,13 +35,13 @@ const updateCourse = (courseId, course) => {
 
 
 const findCourseById = (courseId) => {
-    return fetch("https://wbdv-generic-server.herokuapp.com/api/shinekim/courses/" + courseId)
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/001479351/courses/" + courseId)
         .then(response => response.json())
 };
 
 const findAllCourses = () => {
     //first we fetch the data from remote server
-    return fetch("https://wbdv-generic-server.herokuapp.com/api/shinekim/courses")
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/001479351/courses")
     //then we handle the response (convert to JSON)
         .then(response => response.json())
 };

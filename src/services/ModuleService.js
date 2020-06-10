@@ -1,22 +1,22 @@
 const findAllModules = () => {
-    return fetch("http://wbdv-generic-server.herokuapp.com/api/shinekim/modules")
+    return fetch("http://wbdv-generic-server.herokuapp.com/api/001479351/modules")
         .then(response => response.json())
 };
 
 //restful services
-const findModulesForCourse = (courseId) => {
-    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/courses/${courseId}/modules`)
+const findModules = (courseId) => {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/001479351/courses/${courseId}/modules`)
         .then(response => response.json())
 };
 
 const deleteModule = (moduleId) => {
-    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/modules/${moduleId}`,
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/001479351/modules/${moduleId}`,
         {method: "DELETE"})
         .then(response => response.json())
 };
 
 const addModule = (courseId, module) => {
-    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/courses/${courseId}/modules`, {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/001479351/courses/${courseId}/modules`, {
         method: "POST",
         body: JSON.stringify(module),
         headers: {"content-type": "application/json"}})
@@ -24,7 +24,7 @@ const addModule = (courseId, module) => {
 };
 
 const updateModule = (moduleId, module) => {
-    return fetch(`http://wbdv-generic-server.herokuapp.com/api/shinekim/modules/${moduleId}`, {
+    return fetch(`http://wbdv-generic-server.herokuapp.com/api/001479351/modules/${moduleId}`, {
         method: "PUT",
         body: JSON.stringify(module),
         headers: {"content-type": "application/json"}})
@@ -33,9 +33,9 @@ const updateModule = (moduleId, module) => {
 
 export default {
     //"findAllModules": findAllModules
-    findAllModules,
+    //findAllModules,
     deleteModule,
     addModule,
     updateModule,
-    findModulesForCourse
+    findModules
 }

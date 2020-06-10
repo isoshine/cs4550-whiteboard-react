@@ -6,6 +6,9 @@ import HomeComponent from "./HomeComponent";
 import SignInComponent from "./SignInComponent";
 import SignUpComponent from "./SignUpComponent";
 import ProfileComponent from "./ProfileComponent";
+import ModuleListContainer from "../containers/ModuleListContainer";
+import LessonTabsContainer from "../containers/LessonTabsContainer";
+import TopicPillsContainer from "../containers/TopicPillsContainer";
 
 //"extends React.Component"- inheriting React's ES6
 class Whiteboard extends React.Component {
@@ -41,13 +44,34 @@ class Whiteboard extends React.Component {
                            component={CourseEditor}/>
 
                     <Route
-                        path={['/editor/:courseId', '/editor/:courseId/modules/:moduleId']}
+                        path={['/editor/:courseId',
+                               '/editor/:courseId/modules/:moduleId']}
                         exact={true}
                         component={CourseEditor}/>
 
-                    {/*<Route path="/editor/:courseId"*/}
-                    {/*       exact={true}*/}
-                    {/*       component={CourseEditor}/>*/}
+                    <Route path="/editor/:courseId/modules"
+                           exact={true}
+                           component={ModuleListContainer}/>
+
+                    <Route
+                        path={['/editor/:courseId/modules/:moduleId',
+                               '/editor/:courseId/modules/:moduleId/lessons/:lessonId']}
+                        exact={true}
+                        component={ModuleListContainer}/>
+
+                    <Route path="/editor/:courseId/modules/:moduleId/lessons"
+                           exact={true}
+                           component={LessonTabsContainer}/>
+
+                    <Route
+                        path={['/editor/:courseId/modules/:moduleId/lessons/:lessonId',
+                               '/editor/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId']}
+                        exact={true}
+                        component={LessonTabsContainer}/>
+
+                    <Route path="/editor/:courseId/modules/:moduleId/lessons/:lessonId/topics"
+                           exact={true}
+                           component={TopicPillsContainer}/>
 
                 </div>
             </BrowserRouter>

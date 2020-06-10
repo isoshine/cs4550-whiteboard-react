@@ -3,8 +3,10 @@ import LessonTabsComponent from "../components/LessonTabsComponent";
 import {addLesson, findLessons, deleteLesson, updateLesson} from "../services/LessonService";
 
 //same as ModuleListContainer, more modern syntax
-const stateToPropertyMapper = (state) => ({
-    lessons: state.lessonReducer.lessons
+const stateToPropertyMapper = (state, ownProps) => ({
+    lessons: state.lessonReducer.lessons,
+    newLessonTitle: state.lessonReducer.newLessonTitle,
+    params: ownProps.params
 });
 
 const dispatchToPropertyMapper = (dispatch) => {

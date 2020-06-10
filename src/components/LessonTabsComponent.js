@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 class LessonTabsComponent extends React.Component {
     state = {
@@ -18,22 +19,22 @@ class LessonTabsComponent extends React.Component {
 
     render() {
         return(
-            <div className="tabbable">
-                <ul className="wbdv-nav-tabs nav nav-tabs">
+            <div>
+                <ul className="wbdv-nav-tabs nav nav-pills nav-fill">
                     {
                         this.props.lessons.map(lesson =>
                             <li className="wbdv-nav-item nav-item"
                                 key={lesson._id}>
 
                                 {
-                                    this.state.editLesson._id === module._id &&
+                                    this.state.editLesson._id === lesson._id &&
                                     <span>
                                         <input onChange={
                                             (event) => {
                                                 const newTitle = event.target.value;
                                                 this.setState(prevState => ({
                                                     editLesson: {
-                                                        ...prevState.editModule,
+                                                        ...prevState.editLesson,
                                                         title: newTitle
                                                     }
                                                 }))
@@ -58,7 +59,11 @@ class LessonTabsComponent extends React.Component {
                                 {
                                     this.state.editLesson._id !== lesson._id &&
                                     <span>
-                                        {lesson.title}
+                                        <Link to={`/editor/${this.props.params.courseId}/modules/
+                                                   ${this.props.params.moduleId}/lessons/${lesson._id}`}>
+                                            {lesson.title}
+                                         </Link>
+
                                         <button onClick={() => this.setState({editLesson: lesson})}
                                                 type="button"
                                                 className="btn btn-primary">

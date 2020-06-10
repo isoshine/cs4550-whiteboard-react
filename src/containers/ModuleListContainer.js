@@ -15,8 +15,8 @@ const stateToPropertyMapper = (state, ownProps) => {
 //the callback function we are fed- the callback function that we can invoke to alert what is going on
 const dispatchToPropertyMapper = (dispatch) => {
     return {
-        findModulesForCourse: (courseId) => {
-            ModuleService.findModulesForCourse(courseId)
+        findModules: (courseId) => {
+            ModuleService.findModules(courseId)
                 .then(courseModules => dispatch({
                     type: "FIND_MODULES",
                     modules: courseModules

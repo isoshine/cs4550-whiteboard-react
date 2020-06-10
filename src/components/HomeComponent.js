@@ -8,11 +8,6 @@ const HomeComponent = () =>
         <div className="wbdv-list list-group">
 
             <Link className="wbdv-list-item list-group-item"
-                  to="/editor">
-                Course Editor
-            </Link>
-
-            <Link className="wbdv-list-item list-group-item"
                   to="/table/courses">
                 Course List
             </Link>

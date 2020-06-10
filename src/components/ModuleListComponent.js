@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 class ModuleListComponent extends React.Component {
     state = {
@@ -8,7 +9,7 @@ class ModuleListComponent extends React.Component {
 
     componentDidMount() {
         //this.props.findAllModules();
-        this.props.findModulesForCourse(this.props.params.courseId);
+        this.props.findModules(this.props.params.courseId)
     }
 
     render() {
@@ -55,7 +56,10 @@ class ModuleListComponent extends React.Component {
                                 {
                                     this.state.editModule._id !== module._id &&
                                     <span>
-                                        {module.title}
+                                        <Link to={`editor/${this.props.params.courseId}/modules/${module._id}`}>
+                                            {module.title}
+                                         </Link>
+
                                         <button onClick={() => this.setState({editModule: module})}
                                                 type="button"
                                                 className="btn btn-primary">

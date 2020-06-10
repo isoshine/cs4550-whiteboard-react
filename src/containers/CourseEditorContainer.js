@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import TopicPillsComponent from "../components/TopicPillsComponent";
 import ModuleListContainer from "./ModuleListContainer";
 import LessonTabsContainer from "./LessonTabsContainer";
+import TopicPillsContainer from "./TopicPillsContainer";
 
 //if i need to maintain a state, then i must be a class
 //if i do not need to maintain a state, then i can be a function
@@ -36,7 +37,7 @@ const CourseEditorContainer = ({match}) => {
                         <br/>
                         <div className="wbdv-topic-pills container horizontal-scrollable">
                             <div className="row text-center">
-                                <TopicPillsComponent/>
+                                <TopicPillsContainer {...match}/>
                             </div>
                         </div>
                         <br/>
