@@ -5,6 +5,7 @@ import LessonTabsContainer from "./LessonTabsContainer";
 import TopicPillsContainer from "./TopicPillsContainer";
 import courseService from "../services/CourseService";
 
+
 //if i need to maintain a state, then i must be a class
 //if i do not need to maintain a state, then i can be a function
 
@@ -12,6 +13,7 @@ const CourseEditorContainer = ({match}) => {
     return (
         <div className="container">
             {/*{match.params.courseId}*/}
+            {/*match.params.moduleId*/}
 
             <Link to="/table/courses">
                 Back

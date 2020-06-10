@@ -1,7 +1,7 @@
-const findAllModules = () => {
-    return fetch("http://wbdv-generic-server.herokuapp.com/api/001479351/modules")
-        .then(response => response.json())
-};
+// const findAllModules = () => {
+//     return fetch("http://wbdv-generic-server.herokuapp.com/api/001479351/modules")
+//         .then(response => response.json())
+// };
 
 //restful services
 const findModules = (courseId) => {

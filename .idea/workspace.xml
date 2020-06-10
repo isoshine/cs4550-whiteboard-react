@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5a62ce76-c3a3-4e6e-8167-dfdaa39dc454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModuleListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Whiteboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/LessonTabsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LessonTabsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/TopicPillsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TopicPillsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/LessonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ModuleListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ModuleListContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ModuleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +108,7 @@
       <workItem from="1591247551141" duration="2797000" />
       <workItem from="1591315702441" duration="6379000" />
       <workItem from="1591397193804" duration="31724000" />
-      <workItem from="1591734881291" duration="23652000" />
+      <workItem from="1591734881291" duration="27122000" />
     </task>
     <servers />
   </component>

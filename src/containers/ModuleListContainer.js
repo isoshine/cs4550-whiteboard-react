@@ -4,11 +4,11 @@ import ModuleService from "../services/ModuleService";
 import moduleReducer from "../reducers/moduleReducer";
 
 //will receive the state form the store (via connect)
-const stateToPropertyMapper = (state, ownProps) => {
+const stateToPropertyMapper = (state, match) => {
     return {
         modules: state.moduleReducer.modules,
         newModuleTitle: state.moduleReducer.newModuleTitle,
-        params: ownProps.params
+        params: match.params
     }
 };
 

@@ -4,10 +4,10 @@ import {addLesson, findLessons, deleteLesson, updateLesson} from "../services/Le
 import LessonService from "../services/LessonService";
 
 //same as ModuleListContainer, more modern syntax
-const stateToPropertyMapper = (state, ownProps) => ({
+const stateToPropertyMapper = (state, match) => ({
     lessons: state.lessonReducer.lessons,
     newLessonTitle: state.lessonReducer.newLessonTitle,
-    params: ownProps.params
+    params: match.params
 });
 
 const dispatchToPropertyMapper = (dispatch) => {
