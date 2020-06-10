@@ -35,7 +35,7 @@ class TopicPillsComponent extends React.Component {
                                         }
                                                value={this.state.editTopic.title}/>
                                         <button type="button"
-                                           className="btn"
+                                           className="btn btn-primary"
                                            onClick={() => {
                                            this.props.updateTopic(this.state.editTopic._id,
                                                this.state.editTopic);
@@ -52,15 +52,13 @@ class TopicPillsComponent extends React.Component {
                                 {
                                     this.state.editTopic._id !== topic._id &&
                                     <span>
-                                        <Link to={`/editor/${this.props.params.courseId}/modules/
-                                                   ${this.props.params.moduleId}/lessons/
-                                                   ${this.props.params.lessonId}/topics`}>
+                                        <Link to={`/topics/${topic._id}`}>
                                             {topic.title}
                                         </Link>
 
                                         <button onClick={() => this.setState({editTopic:topic})}
                                                 type="button"
-                                                className="btn btn-primary">
+                                                className="btn btn-light">
                                             Edit
                                         </button>
                                     </span>
@@ -69,6 +67,27 @@ class TopicPillsComponent extends React.Component {
                         </div>
                     )}
                 </ul>
+
+                <div className="input-group">
+                    <input value={this.state.newTopicTitle}
+                           className="form-control"
+                           placeholder="New Topic Title"
+                           onChange={(event) => this.setState({
+                               newTopicTitle: event.target.value
+                           })}/>
+                    <div className="input-group-append">
+                        <button type="button"
+                                className="btn btn-primary"
+                                onClick={() => this.props.addTopic(
+                                    this.props.params.lessonId,
+                                    {
+                                        title: this.state.newTopicTitle
+                                    })}>
+                            Add
+                        </button>
+                    </div>
+                </div>
+
             </div>
         )
     }

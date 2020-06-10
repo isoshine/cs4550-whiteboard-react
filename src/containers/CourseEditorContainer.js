@@ -1,9 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import TopicPillsComponent from "../components/TopicPillsComponent";
 import ModuleListContainer from "./ModuleListContainer";
 import LessonTabsContainer from "./LessonTabsContainer";
 import TopicPillsContainer from "./TopicPillsContainer";
+import courseService from "../services/CourseService";
 
 //if i need to maintain a state, then i must be a class
 //if i do not need to maintain a state, then i can be a function
@@ -17,7 +17,9 @@ const CourseEditorContainer = ({match}) => {
                 Back
             </Link>
 
-            <h2 className="wbdv-course-title">CS1234</h2>
+            {courseService.findCourseById(match.params.courseId).title}
+
+            <h2 className="wbdv-course-title">CS 4550</h2>
             <div>
                 <div className="row">
 
@@ -48,6 +50,5 @@ const CourseEditorContainer = ({match}) => {
         </div>
     )
 };
-
 
 export default CourseEditorContainer;

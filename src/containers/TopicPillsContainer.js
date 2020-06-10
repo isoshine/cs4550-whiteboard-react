@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import {addTopic, findTopics, updateTopic} from "../services/TopicService";
 import TopicPillsComponent from "../components/TopicPillsComponent";
+import ModuleService from "../services/ModuleService";
 
 const stateToPropertyMapper = (state, ownProps) => ({
     topics: state.topicReducer.topics,
@@ -32,10 +33,11 @@ const dispatchToPropertyMapper = (dispatch) => {
                 }))
         },
         deleteTopic: (topicId) => {
-            dispatch({
-                type: "DELETE_TOPIC",
-                topicId
-            })
+            ModuleService.deleteModule(topicId)
+                .then(status => dispatch({
+                    type: "DELETE_LESSON",
+                    topicId
+                }))
         }
     }
 };

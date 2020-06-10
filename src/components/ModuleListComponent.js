@@ -15,10 +15,10 @@ class ModuleListComponent extends React.Component {
     render() {
         return (
             <div>
-                <h1>Modules</h1>
+                <h4>Modules</h4>
                 <ul className="list-group">
                     {this.props.modules.map(module =>
-                        <div key={module._id}>
+                        <div>
                             <div key={module._id}
                                  className="wbdv-btn btn list-group-item list-group-item-action">
 
@@ -56,13 +56,13 @@ class ModuleListComponent extends React.Component {
                                 {
                                     this.state.editModule._id !== module._id &&
                                     <span>
-                                        <Link to={`editor/${this.props.params.courseId}/modules/${module._id}`}>
+                                        <Link to={`/modules/${module._id}`}>
                                             {module.title}
                                          </Link>
 
                                         <button onClick={() => this.setState({editModule: module})}
                                                 type="button"
-                                                className="btn btn-primary">
+                                                className="btn btn-light">
                                                     Edit
                                         </button>
                                     </span>
