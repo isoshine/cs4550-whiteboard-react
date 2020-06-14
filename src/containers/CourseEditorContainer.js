@@ -4,6 +4,7 @@ import ModuleListContainer from "./ModuleListContainer";
 import LessonTabsContainer from "./LessonTabsContainer";
 import TopicPillsContainer from "./TopicPillsContainer";
 import courseService from "../services/CourseService";
+import WidgetsComponent from "../components/WidgetsComponent";
 
 
 //if i need to maintain a state, then i must be a class
@@ -45,6 +46,8 @@ const CourseEditorContainer = ({match}) => {
                             </div>
                         </div>
                         <br/>
+
+                        <WidgetsComponent/>
 
                     </div>
                 </div>

@@ -8,6 +8,7 @@ import moduleReducer from "./reducers/moduleReducer";
 import App from "./App";
 import lessonReducer from "./reducers/lessonReducer";
 import topicReducer from "./reducers/topicReducer";
+import widgetReducer from "./reducers/widgetReducer";
 
 //bc all of our components will no longer require state (stateless components),
 //ideally we will have only functions as opposed to classes
@@ -21,7 +22,7 @@ import topicReducer from "./reducers/topicReducer";
 
 //mega reducer that contains a bunch of reducer
 const reducers = combineReducers({
-    moduleReducer, lessonReducer, topicReducer
+    moduleReducer, lessonReducer, topicReducer, widgetReducer
 });
 
 const store = createStore(reducers);
