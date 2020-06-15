@@ -1,13 +1,13 @@
 import {connect} from "react-redux";
 import LessonTabsComponent from "../components/LessonTabsComponent";
-import {addLesson, findLessons, deleteLesson, updateLesson} from "../services/LessonService";
+import {addLesson, findLessonsForModule, deleteLesson, updateLesson} from "../services/LessonService";
 import LessonService from "../services/LessonService";
 
 //same as ModuleListContainer, more modern syntax
-const stateToPropertyMapper = (state, match) => ({
+const stateToPropertyMapper = (state) => ({
     lessons: state.lessonReducer.lessons,
     newLessonTitle: state.lessonReducer.newLessonTitle,
-    params: match.params
+    //params: ownProps.params
 });
 
 const dispatchToPropertyMapper = (dispatch) => {
@@ -26,8 +26,8 @@ const dispatchToPropertyMapper = (dispatch) => {
                     newLesson
                 }))
         },
-        findLessons: (moduleId) => {
-            LessonService.findLessons(moduleId)
+        findLessonsForModule: (moduleId) => {
+            LessonService.findLessonsForModule(moduleId)
                 .then(actualLessons => dispatch({
                     type: "FIND_LESSONS",
                     actualLessons

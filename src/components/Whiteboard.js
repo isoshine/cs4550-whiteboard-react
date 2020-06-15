@@ -39,30 +39,30 @@ class Whiteboard extends React.Component {
                            component={CourseListContainer}/>
 
 
-                    {/*<Route*/}
-                    {/*    path='/editor'*/}
-                    {/*    exact={true}*/}
-                    {/*    component={CourseEditor}/>*/}
+                    <Route
+                        path='/editor'
+                        exact={true}
+                        component={CourseEditor}/>
 
                     <Route
                         path={['/editor/:courseId', '/editor/:courseId/modules/:moduleId']}
                         exact={true}
                         component={CourseEditor}/>
 
-                    {/*<Route*/}
-                    {/*    path='/modules'*/}
-                    {/*    exact={true}*/}
-                    {/*    component={ModuleListContainer}/>*/}
+                    <Route
+                        path='/modules'
+                        exact={true}
+                        component={ModuleListContainer}/>
 
                     <Route
                         path={['/modules/:moduleId', '/modules/:moduleId/lessons/:lessonId']}
                         exact={true}
                         component={ModuleListContainer}/>
 
-                    {/*<Route*/}
-                    {/*    path='/lessons'*/}
-                    {/*    exact={true}*/}
-                    {/*    component={LessonTabsContainer}/>*/}
+                    <Route
+                        path='/lessons'
+                        exact={true}
+                        component={LessonTabsContainer}/>
 
                     <Route
                         path={['/lessons/:lessonId', '/lessons/:lessonId/topics/:topicId']}

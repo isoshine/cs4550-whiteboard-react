@@ -1,4 +1,4 @@
-const findLessons = (moduleId) =>
+const findLessonsForModule = (moduleId) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/001479351/modules/${moduleId}/lessons`)
         .then(response => response.json());
 
@@ -30,5 +30,5 @@ export default {
     deleteLesson,
     addLesson,
     updateLesson,
-    findLessons
+    findLessonsForModule
 }

@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
-import {addTopic, findTopics, updateTopic} from "../services/TopicService";
+import {addTopic, findTopicsForLesson, updateTopic} from "../services/TopicService";
 import TopicPillsComponent from "../components/TopicPillsComponent";
 import ModuleService from "../services/ModuleService";
 
-const stateToPropertyMapper = (state, ownProps) => ({
+const stateToPropertyMapper = (state) => ({
     topics: state.topicReducer.topics,
     newTopicTitle: state.topicReducer.newTopicTitle,
-    params: ownProps.params
+    //params: ownProps.params
 });
 
 const dispatchToPropertyMapper = (dispatch) => {
@@ -25,8 +25,8 @@ const dispatchToPropertyMapper = (dispatch) => {
                     newTopic
                 }))
         },
-        findTopics: (lessonId) => {
-            findTopics(lessonId)
+        findTopicsForLesson: (lessonId) => {
+            findTopicsForLesson(lessonId)
                 .then(actualTopics => dispatch({
                     type: "FIND_TOPICS",
                     actualTopics

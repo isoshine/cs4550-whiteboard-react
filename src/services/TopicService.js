@@ -1,4 +1,4 @@
-export const findTopics = (lessonId) =>
+export const findTopicsForLesson = (lessonId) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/001479351/lessons/${lessonId}/topics`)
         .then(response => response.json());
 

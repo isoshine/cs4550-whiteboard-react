@@ -4,19 +4,19 @@ import ModuleService from "../services/ModuleService";
 import moduleReducer from "../reducers/moduleReducer";
 
 //will receive the state form the store (via connect)
-const stateToPropertyMapper = (state, match) => {
+const stateToPropertyMapper = (state, ownProps) => {
     return {
         modules: state.moduleReducer.modules,
         newModuleTitle: state.moduleReducer.newModuleTitle,
-        params: match.params
+        params: ownProps.params
     }
 };
 
 //the callback function we are fed- the callback function that we can invoke to alert what is going on
 const dispatchToPropertyMapper = (dispatch) => {
     return {
-        findModules: (courseId) => {
-            ModuleService.findModules(courseId)
+        findModulesForCourse: (courseId) => {
+            ModuleService.findModulesForCourse(courseId)
                 .then(courseModules => dispatch({
                     type: "FIND_MODULES",
                     modules: courseModules

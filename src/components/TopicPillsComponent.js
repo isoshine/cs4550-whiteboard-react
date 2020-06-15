@@ -8,12 +8,21 @@ class TopicPillsComponent extends React.Component {
     };
 
     componentDidMount() {
-        this.props.findTopics(this.props.params.lessonId)
+        this.props.findTopicsForLesson(this.props.params.lessonId)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.params.lessonId !== this.props.params.lessonId) {
+            this.props.findTopicsForLesson(this.props.params.lessonId)
+        }
     }
 
     render() {
         return (
             <div>
+
+                <h6>Belongs to Lesson: {this.props.params.lessonId}</h6>
+
                 <ul className="wbdv-nav-pills nav nav-pills nav-fill">
                     {this.props.topics.map(topic =>
                         <div>
@@ -52,9 +61,10 @@ class TopicPillsComponent extends React.Component {
                                 {
                                     this.state.editTopic._id !== topic._id &&
                                     <span>
-                                        <Link to={`/topics/${topic._id}`}>
+                                        {/*<Link to={`/editor/${this.props.params.lessonId}*/}
+                                        {/*           /topics/${topic._id}`}>*/}
                                             {topic.title}
-                                        </Link>
+                                        {/*</Link>*/}
 
                                         <button onClick={() => this.setState({editTopic:topic})}
                                                 type="button"

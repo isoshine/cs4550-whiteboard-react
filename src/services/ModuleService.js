@@ -4,7 +4,7 @@
 // };
 
 //restful services
-const findModules = (courseId) => {
+const findModulesForCourse = (courseId) => {
     return fetch(`http://wbdv-generic-server.herokuapp.com/api/001479351/courses/${courseId}/modules`)
         .then(response => response.json())
 };
@@ -37,5 +37,5 @@ export default {
     deleteModule,
     addModule,
     updateModule,
-    findModules
+    findModulesForCourse
 }

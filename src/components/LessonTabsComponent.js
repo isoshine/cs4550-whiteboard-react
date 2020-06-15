@@ -8,12 +8,21 @@ class LessonTabsComponent extends React.Component {
     };
 
     componentDidMount() {
-        this.props.findLessons(this.props.params.moduleId)
+        this.props.findLessonsForModule(this.props.params.moduleId)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.params.moduleId !== this.props.params.moduleId) {
+            this.props.findLessonsForModule(this.props.params.moduleId)
+        }
     }
 
     render() {
         return (
             <div>
+
+                <h6>Belongs to Module: {this.props.params.moduleId}</h6>
+
                 <ul className="wbdv-nav-tabs nav nav-tabs">
                     <li className="wbdv-nav-dropdown nav-item dropdown">
 
@@ -25,7 +34,8 @@ class LessonTabsComponent extends React.Component {
                         {
                             this.props.lessons.map(lesson =>
                             <div>
-                                <a className="dropdown-item" key={lesson._id}>
+                                <a className="dropdown-item"
+                                   key={lesson._id}>
                                     {
                                         this.state.editLesson._id === lesson._id &&
                                         <span>
@@ -58,7 +68,8 @@ class LessonTabsComponent extends React.Component {
                                     }{
                                     this.state.editLesson._id !== lesson._id &&
                                     <span>
-                                            <Link to={`/lessons/${lesson._id}`}>
+                                            <Link to={`/editor/${this.props.params.moduleId}
+                                                       /lessons/${lesson._id}`}>
                                                 {lesson.title}
                                             </Link>
                                         <button onClick={() => this.setState({editLesson: lesson})}

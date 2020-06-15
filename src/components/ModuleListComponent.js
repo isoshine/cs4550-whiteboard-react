@@ -9,7 +9,8 @@ class ModuleListComponent extends React.Component {
 
     componentDidMount() {
         //this.props.findAllModules();
-        this.props.findModules(this.props.params.courseId)
+        console.log(this.props);
+        this.props.findModulesForCourse(this.props.match.params.courseId)
     }
 
     render() {
@@ -56,7 +57,8 @@ class ModuleListComponent extends React.Component {
                                 {
                                     this.state.editModule._id !== module._id &&
                                     <span>
-                                        <Link to={`/modules/${module._id}`}>
+                                        <Link to={`/editor/${this.props.match.params.courseId}
+                                                   /modules/${module._id}`}>
                                             {module.title}
                                          </Link>
 
@@ -81,7 +83,7 @@ class ModuleListComponent extends React.Component {
                            className="form-control"/>
                     <div className="input-group-append">
                         <button onClick={() => this.props.addModule(
-                            this.props.params.courseId,
+                            this.props.match.params.courseId,
                             {
                             title: this.state.newModuleTitle
                         })}
