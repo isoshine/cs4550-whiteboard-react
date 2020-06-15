@@ -8,12 +8,13 @@ class LessonTabsComponent extends React.Component {
     };
 
     componentDidMount() {
-        this.props.findLessonsForModule(this.props.params.moduleId)
+        console.log(this.props);
+        this.props.findLessonsForModule(this.props.match.params.moduleId)
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevProps.params.moduleId !== this.props.params.moduleId) {
-            this.props.findLessonsForModule(this.props.params.moduleId)
+        if(prevProps.match.params.moduleId !== this.props.match.params.moduleId) {
+            this.props.findLessonsForModule(this.props.match.params.moduleId)
         }
     }
 
@@ -21,7 +22,7 @@ class LessonTabsComponent extends React.Component {
         return (
             <div>
 
-                <h6>Belongs to Module: {this.props.params.moduleId}</h6>
+                <h6>Belongs to Module: {this.props.match.params.moduleId}</h6>
 
                 <ul className="wbdv-nav-tabs nav nav-tabs">
                     <li className="wbdv-nav-dropdown nav-item dropdown">
@@ -68,7 +69,7 @@ class LessonTabsComponent extends React.Component {
                                     }{
                                     this.state.editLesson._id !== lesson._id &&
                                     <span>
-                                            <Link to={`/editor/${this.props.params.moduleId}
+                                            <Link to={`/editor/${this.props.match.params.moduleId}
                                                        /lessons/${lesson._id}`}>
                                                 {lesson.title}
                                             </Link>
@@ -96,7 +97,7 @@ class LessonTabsComponent extends React.Component {
                                 <button type="button"
                                         className="btn btn-primary"
                                         onClick={() => this.props.addLesson(
-                                            this.props.params.moduleId,
+                                            this.props.match.params.moduleId,
                                             {
                                                 title: this.state.newLessonTitle
                                             })}>

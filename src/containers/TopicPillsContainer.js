@@ -3,10 +3,10 @@ import {addTopic, findTopicsForLesson, updateTopic} from "../services/TopicServi
 import TopicPillsComponent from "../components/TopicPillsComponent";
 import ModuleService from "../services/ModuleService";
 
-const stateToPropertyMapper = (state) => ({
+const stateToPropertyMapper = (state, ownProps) => ({
     topics: state.topicReducer.topics,
     newTopicTitle: state.topicReducer.newTopicTitle,
-    //params: ownProps.params
+    params: ownProps.params
 });
 
 const dispatchToPropertyMapper = (dispatch) => {

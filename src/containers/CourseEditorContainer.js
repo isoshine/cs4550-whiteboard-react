@@ -32,13 +32,13 @@ const CourseEditorContainer = ({match, history}) => {
                     <div className="col-8 col-lg-9 col-md-8">
                         <div className="wbdv-lesson-tabs container horizontal-scrollable">
                             <div className="row text-center">
-                                <LessonTabsContainer {...match}/>
+                                <LessonTabsContainer match={match} history={history}/>
                             </div>
                         </div>
 
                         <div className="wbdv-topic-pills container horizontal-scrollable">
                             <div className="row text-center">
-                                <TopicPillsContainer {...match}/>
+                                <TopicPillsContainer match={match} history={history}/>
                             </div>
                         </div>
 
