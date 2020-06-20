@@ -1,7 +1,6 @@
 import {connect} from "react-redux";
-import {addTopic, findTopicsForLesson, updateTopic} from "../services/TopicService";
+import {addTopic, deleteTopic, findTopicsForLesson, updateTopic} from "../services/TopicService";
 import TopicPillsComponent from "../components/TopicPillsComponent";
-import ModuleService from "../services/ModuleService";
 
 const stateToPropertyMapper = (state, ownProps) => ({
     topics: state.topicReducer.topics,
@@ -13,7 +12,7 @@ const dispatchToPropertyMapper = (dispatch) => {
     return {
         updateTopic: (topicId, newTopic) => {
             updateTopic(topicId, newTopic)
-                .then(actualLesson => dispatch({
+                .then(actualTopic => dispatch({
                     type: "UPDATE_TOPIC",
                     newTopic
                 }))
@@ -33,9 +32,9 @@ const dispatchToPropertyMapper = (dispatch) => {
                 }))
         },
         deleteTopic: (topicId) => {
-            ModuleService.deleteModule(topicId)
+            deleteTopic(topicId)
                 .then(status => dispatch({
-                    type: "DELETE_LESSON",
+                    type: "DELETE_TOPIC",
                     topicId
                 }))
         }

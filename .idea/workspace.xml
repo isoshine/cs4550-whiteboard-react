@@ -4,11 +4,18 @@
     <list default="true" id="5a62ce76-c3a3-4e6e-8167-dfdaa39dc454" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignInComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignInComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Whiteboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Whiteboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WidgetsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WidgetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/widgets/HeadingWidgetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/HeadingWidgetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/widgets/ParagraphWidgetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/ParagraphWidgetComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/LessonTabsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LessonTabsContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/TopicPillsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TopicPillsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/widgetReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/widgetReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/WidgetService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/WidgetService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +125,17 @@
       <workItem from="1592026678314" duration="2000" />
       <workItem from="1592026858870" duration="432000" />
       <workItem from="1592100445948" duration="5490000" />
-      <workItem from="1592174190054" duration="11251000" />
+      <workItem from="1592174190054" duration="12779000" />
+      <workItem from="1592197503341" duration="2987000" />
+      <workItem from="1592240250917" duration="1497000" />
+      <workItem from="1592242275723" duration="4301000" />
+      <workItem from="1592277315821" duration="17796000" />
+      <workItem from="1592425250577" duration="2581000" />
+      <workItem from="1592505552458" duration="320000" />
+      <workItem from="1592511827379" duration="17000" />
+      <workItem from="1592529130641" duration="6467000" />
+      <workItem from="1592606567178" duration="14133000" />
+      <workItem from="1592622995225" duration="505000" />
     </task>
     <servers />
   </component>

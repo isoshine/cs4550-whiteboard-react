@@ -6,9 +6,6 @@ import HomeComponent from "./HomeComponent";
 import SignInComponent from "./SignInComponent";
 import SignUpComponent from "./SignUpComponent";
 import ProfileComponent from "./ProfileComponent";
-import ModuleListContainer from "../containers/ModuleListContainer";
-import LessonTabsContainer from "../containers/LessonTabsContainer";
-import TopicPillsContainer from "../containers/TopicPillsContainer";
 
 //"extends React.Component"- inheriting React's ES6
 class Whiteboard extends React.Component {
@@ -48,7 +45,8 @@ class Whiteboard extends React.Component {
                         path={['/editor/:courseId',
                                '/editor/:courseId/modules/:moduleId',
                                '/editor/:moduleId/lessons/:lessonId',
-                               '/editor/:lessonId/topics/:topicId']}
+                               '/editor/:lessonId/topics/:topicId',
+                               '/editor/:topicId/widgets/:widgetId']}
                         exact={true}
                         component={CourseEditor}/>
 

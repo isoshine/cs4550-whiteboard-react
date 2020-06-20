@@ -20,9 +20,9 @@ class LessonTabsComponent extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
 
-                <h6>Belongs to Module: {this.props.match.params.moduleId}</h6>
+                {/*<h6>Belongs to Module: {this.props.match.params.moduleId}</h6>*/}
 
                 <ul className="wbdv-nav-tabs nav nav-tabs">
                     <li className="wbdv-nav-dropdown nav-item dropdown">

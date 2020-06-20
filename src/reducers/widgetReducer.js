@@ -1,13 +1,24 @@
 const initialState = {
-    widgets: [
-        {id: 123, name: "A"},
-        {id: 345, name: "B"},
-        {id: 456, name: "C"}
-    ]
+    widgets: []
 };
 
 const widgetReducer = (state=initialState, action) => {
     switch(action.type) {
+        // case "MOVE_UP":
+        //     return {
+        //         ...state,
+        //         widgets: state.widgets.map(
+        //             widget => widget.widgetOrder === action.newWidget.widgetOrder ?
+        //                 action.newWidget : widget
+        //         )
+        //     };
+        case "UPDATE_WIDGET":
+            return {
+                ...state,
+                widgets: state.widgets.map(
+                    widget => widget.id === action.newWidget.id ?
+                        action.newWidget : widget)
+            };
         case "DELETE_WIDGET":
             return {
                 ...state,

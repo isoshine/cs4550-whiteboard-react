@@ -4,7 +4,8 @@ import ModuleListContainer from "./ModuleListContainer";
 import LessonTabsContainer from "./LessonTabsContainer";
 import TopicPillsContainer from "./TopicPillsContainer";
 import courseService from "../services/CourseService";
-import WidgetsComponent from "../components/WidgetsComponent";
+import WidgetsComponent from "../components/WidgetComponent";
+import WidgetContainer from "./WidgetContainer";
 
 
 //if i need to maintain a state, then i must be a class
@@ -42,7 +43,11 @@ const CourseEditorContainer = ({match, history}) => {
                             </div>
                         </div>
 
-                        <WidgetsComponent/>
+                        <div className="wbdv-widgets container">
+                            <div className="row">
+                                <WidgetContainer match={match} history={history}/>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

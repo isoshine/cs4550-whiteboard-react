@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import LessonTabsComponent from "../components/LessonTabsComponent";
-import {addLesson, findLessonsForModule, deleteLesson, updateLesson} from "../services/LessonService";
 import LessonService from "../services/LessonService";
 
 //same as ModuleListContainer, more modern syntax

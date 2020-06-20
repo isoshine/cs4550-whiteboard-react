@@ -37,7 +37,6 @@ const SignInComponent = () =>
 
             <a href="#">Cancel</a>
 
-
         </div>
     </div>;
 

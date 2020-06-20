@@ -19,9 +19,9 @@ class TopicPillsComponent extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
 
-                <h6>Belongs to Lesson: {this.props.match.params.lessonId}</h6>
+                {/*<h6>Belongs to Lesson: {this.props.match.params.lessonId}</h6>*/}
 
                 <ul className="wbdv-nav-pills nav nav-pills nav-fill">
                     {this.props.topics.map(topic =>
